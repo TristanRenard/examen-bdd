@@ -11,11 +11,11 @@ dotenv.config({
 const { Client } = pkg
 
 const client = new Client({
-  user: "admin",
-  password: "mypassword",
-  host: "localhost",
-  database: "examen-db-TristanRenard",
-  port: 5432
+  user: process.env.DB_USER || "admin",
+  password: process.env.DB_PASSWORD || "mypassword",
+  host: process.env.DB_HOST || "localhost",
+  database: process.env.DB_NAME || "examen-db-TristanRenard",
+  port: process.env.DB_PORT || 5432
 })
 client.connect()
 
