@@ -1,4 +1,4 @@
 Deploy :
 ```bash
-docker-compose up --build -d                        
+docker-compose --env-file .env.local up -d --build                      
 ```
