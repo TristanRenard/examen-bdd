@@ -155,6 +155,15 @@ const generateRandomData = async (client) => {
       })
     )
 
+    // execute for all orders update_total_price(orders_id)
+    await Promise.all(
+      ordersIds.map(async id => {
+        const query = `SELECT update_total_price($1)`
+        const values = [id]
+        await client.query(query, values)
+      })
+    )
+
 
   } catch (error) {
     console.error("Error:", error)
