@@ -25,7 +25,11 @@ services:
       - postgres
     environment:
       SERVER_PORT: ${SERVER_PORT}
-      DATABASE_URL: postgres://${DB_USER}:${DB_PASSWORD}@postgres:${DB_PORT}/${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_PORT: ${DB_PORT}
+      DB_HOST: ${DB_HOST}
 
 volumes:
   postgres_data:
